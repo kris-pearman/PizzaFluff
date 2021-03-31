@@ -1,0 +1,54 @@
+html,
+body {
+  font-family: roboto;
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+}
+.page-content {
+  width: 80%;
+  margin: 0 auto 0 auto;
+  /* screen - header - footer-height with border */
+  min-height: calc(100vh - 75px - 166px);
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-size: 24px;
+}
+
+.content-container {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  width: 100%;
+}
+.pizza-fluff-logo {
+  height: 300px;
+  width: 400px;
+  border: 4px solid black;
+  border-radius: 15px;
+  margin: 30px auto 60px auto;
+}
+
+.pizza-fluff-logo img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.main-page-options {
+  display: inline-flex;
+  width: 100%;
+  margin: auto 0 60px 0;
+}
+.main-page-option {
+  height: 150px;
+  line-height: 150px;
+  border: 1px solid black;
+  flex-basis: 100%;
+  text-align: center;
+}

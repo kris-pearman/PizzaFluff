@@ -1,0 +1,27 @@
+.page-footer {
+  height: 165px;
+  border-top: 1px solid #de263b;
+  width: 100%;
+  color: #de263b;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.footer-content {
+  padding-left: 10%;
+  text-align: left;
+}
+
+.footer-content li {
+  list-style-type: none;
+  padding: 6px 0;
+}
+
+.contact-us {
+  transform: rotate(-90deg);
+  position: relative;
+  top: 0.75rem;
+  font-size: 0.75rem;
+  left: -100px;
+}

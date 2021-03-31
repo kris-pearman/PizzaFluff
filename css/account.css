@@ -1,0 +1,56 @@
+.admin-page {
+  align-items: flex-start;
+}
+
+/* TODO: refactor column/input style to forms.css */
+.column {
+  width: 50%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.column:last-child {
+  float: right;
+}
+
+.input-block {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 10px 40px;
+  line-height: 32px;
+  font-weight: bold;
+}
+
+.input-block input {
+  width: calc(100% - 200px);
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 32px;
+}
+
+.account-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.buttons-container {
+  display: inline-flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding-top: 60px;
+}
+.pill-button {
+  width: 352px;
+  height: 96px;
+  border-radius: 64px;
+  border: 1px solid black;
+  margin: 0 20px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.pill-button:hover {
+  background-color: #de263b;
+  color: white;
+}
