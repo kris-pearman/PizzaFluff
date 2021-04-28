@@ -16,12 +16,12 @@
 		<div class="content-container">
 			<div class="pizza-fluff-logo"><img src="images/Pizzafluff.png"> </img></div>
 			<div class="main-page-options">
-				<div class="main-page-option">MAINS</div>
-				<div class="main-page-option">SIDES</div>
-				<div class="main-page-option">DESSERTS</div>
-				<div class="main-page-option">DRINKS</div>
+				<div class="main-page-option"><a href="menu.php #mains"><img src="images/mains.png"></img></div>
+				<div class="main-page-option"><a href="menu.php #sides"><img src="images/sides.png"></img></div>
+				<div class="main-page-option"><a href="menu.php #desserts"><img src="images/desserts.png"></img></div>
+				<div class="main-page-option"><a href="menu.php #drinks"><img src="images/drinks.png"></img></div>
 			</div>
-			<div class="pizza-fluff-logo"></div>
+			<div class="main-page-option deals"><a href="deals.php"><img src="images/deals.png"></img></div>
 		</div>
 	</div>
 

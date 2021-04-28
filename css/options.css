@@ -1,20 +1,26 @@
 .options-header {
-    text-align: center;
+  text-align: center;
+  
 }
+
 .options-row {
-  width: 100%;
-  display: inline-flex;
+  /* width: 100%; */
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 60px;
 }
+
 .option {
   border: 1px solid black;
   margin: 0 10px;
-  flex: 1;
+  flex-basis:21%;
+  flex: 1 0 21%;
   height: 180px;
   text-align: center;
   line-height: 180px;
 }
 
 .options-block:last-child {
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 }

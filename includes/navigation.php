@@ -6,7 +6,8 @@
     <a href="deals.php" class="navigation-option">Deals</a>
     <a href="menu.php" class="navigation-option">Menu</a>
     <a href="account.php" class="navigation-option">Account</a>
-    <a href=""><img class="trolley-icon" src="/PizzaFluff/images/cart.svg"></img></a>
+    <a href="Login.php" class="navigation-option">Login</a>
+    <a href="Basket.php"><img class="trolley-icon" src="/PizzaFluff/images/cart.svg"></img></a>
 </nav>
 
 </html>

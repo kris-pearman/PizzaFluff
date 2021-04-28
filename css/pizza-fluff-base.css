@@ -32,6 +32,8 @@ body {
   margin: 30px auto 60px auto;
 }
 
+
+
 .pizza-fluff-logo img {
   display: block;
   margin-left: auto;
@@ -51,4 +53,12 @@ body {
   border: 1px solid black;
   flex-basis: 100%;
   text-align: center;
+  max-width: 275px; 
+  margin:auto;
+}
+
+.deals {
+  align-self: auto;
+  margin: auto;
+  margin-bottom: 30px;
 }

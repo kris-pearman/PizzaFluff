@@ -4,14 +4,14 @@ include('controller/db.php');
 
 //use try/catch block to query the database
 try {
-    $sql = "SELECT * FROM menu_items";
-    $result = $pdo->query($sql);
+    $sql = "SELECT * FROM menu_items WHERE Type = 'Mains' ";
+    $mainsresult = $pdo->query($sql);
 } catch (PDOException $e) {
     echo "error" . $e->getMessage();
 }
 
-while ($row = $result->fetch()) {
-    $products[] = array(
+while ($row = $mainsresult->fetch()) {
+    $mainproducts[] = array(
         'ItemID' => $row['Menu_Items_ID'],
         'ItemName' => $row['Name'],
         'ItemPrice' => $row['Price'],
@@ -20,6 +20,61 @@ while ($row = $result->fetch()) {
         'ItemImage' => $row['Image']
     );
 }
+
+try {
+    $sql = "SELECT * FROM menu_items WHERE Type = 'Sides' ";
+    $sidesresult = $pdo->query($sql);
+} catch (PDOException $e) {
+    echo "error" . $e->getMessage();
+}
+
+while ($row = $sidesresult->fetch()) {
+    $sidesproducts[] = array(
+        'ItemID' => $row['Menu_Items_ID'],
+        'ItemName' => $row['Name'],
+        'ItemPrice' => $row['Price'],
+        'ItemType' => $row['Type'],
+        'ItemDescription' => $row['Description'],
+        'ItemImage' => $row['Image']
+    );
+}
+
+try {
+    $sql = "SELECT * FROM menu_items WHERE Type = 'Desserts' ";
+    $dessertsresult = $pdo->query($sql);
+} catch (PDOException $e) {
+    echo "error" . $e->getMessage();
+}
+
+while ($row = $dessertsresult->fetch()) {
+    $dessertsproducts[] = array(
+        'ItemID' => $row['Menu_Items_ID'],
+        'ItemName' => $row['Name'],
+        'ItemPrice' => $row['Price'],
+        'ItemType' => $row['Type'],
+        'ItemDescription' => $row['Description'],
+        'ItemImage' => $row['Image']
+    );
+}
+
+try {
+    $sql = "SELECT * FROM menu_items WHERE Type = 'Drinks' ";
+    $drinksresult = $pdo->query($sql);
+} catch (PDOException $e) {
+    echo "error" . $e->getMessage();
+}
+
+while ($row = $drinksresult->fetch()) {
+    $drinksproducts[] = array(
+        'ItemID' => $row['Menu_Items_ID'],
+        'ItemName' => $row['Name'],
+        'ItemPrice' => $row['Price'],
+        'ItemType' => $row['Type'],
+        'ItemDescription' => $row['Description'],
+        'ItemImage' => $row['Image']
+    );
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -43,9 +98,9 @@ while ($row = $result->fetch()) {
             <div class="pizza-fluff-logo"><img src="images/Pizzafluff.png"> </img></div>
 
             <section class="options-block">
-                <h2 class="options-header">Pizza</h2>
+                <h2 class="options-header"><a id="mains">Mains</h2>
                 <div class="options-row">
-                    <?php foreach ($products as $items) : ?>
+                    <?php foreach ($mainproducts as $items) : ?>
                         <div class="product-card">
                             <img class="product-image" src="<?php echo $items['ItemImage']; ?>"></img>
                             <strong><?php echo $items['ItemName']; ?></strong>
@@ -62,32 +117,59 @@ while ($row = $result->fetch()) {
             </section>
 
             <section class="options-block">
-                <h2 class="options-header">Heading</h2>
+                <h2 class="options-header"><a id="sides">Sides</h2>
                 <div class="options-row">
-                    <div class="option">ITEM</div>
-                    <div class="option">ITEM</div>
-                    <div class="option">ITEM</div>
-                    <div class="option">ITEM</div>
+                    <?php foreach ($sidesproducts as $items) : ?>
+                        <div class="product-card">
+                            <img class="product-image" src="<?php echo $items['ItemImage']; ?>"></img>
+                            <strong><?php echo $items['ItemName']; ?></strong>
+                            <div class="product-description">
+                                <?php echo $items['ItemDescription']; ?>
+                            </div>
+                            <div class="product-price">
+                                <strong>&pound;<?php echo $items['ItemPrice']; ?></strong>
+                            </div>
+                            <div class="add-to-cart">BUY</div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </section>
 
             <section class="options-block">
-                <h2 class="options-header">Heading</h2>
+                <h2 class="options-header"><a id="drinks">Drinks</h2>
                 <div class="options-row">
-                    <div class="option">ITEM</div>
-                    <div class="option">ITEM</div>
-                    <div class="option">ITEM</div>
-                    <div class="option">ITEM</div>
+                    <?php foreach ($drinksproducts as $items) : ?>
+                        <div class="product-card">
+                            <img class="product-image" src="<?php echo $items['ItemImage']; ?>"></img>
+                            <strong><?php echo $items['ItemName']; ?></strong>
+                            <div class="product-description">
+                                <?php echo $items['ItemDescription']; ?>
+                            </div>
+                            <div class="product-price">
+                                <strong>&pound;<?php echo $items['ItemPrice']; ?></strong>
+                            </div>
+                            <div class="add-to-cart">BUY</div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </section>
 
             <section class="options-block">
-                <h2 class="options-header">Heading</h2>
+                <h2 class="options-header"><a id="desserts">Desserts</h2>
                 <div class="options-row">
-                    <div class="option">ITEM</div>
-                    <div class="option">ITEM</div>
-                    <div class="option">ITEM</div>
-                    <div class="option">ITEM</div>
+                    <?php foreach ($dessertsproducts as $items) : ?>
+                        <div class="product-card">
+                            <img class="product-image" src="<?php echo $items['ItemImage']; ?>"></img>
+                            <strong><?php echo $items['ItemName']; ?></strong>
+                            <div class="product-description">
+                                <?php echo $items['ItemDescription']; ?>
+                            </div>
+                            <div class="product-price">
+                                <strong>&pound;<?php echo $items['ItemPrice']; ?></strong>
+                            </div>
+                            <div class="add-to-cart">BUY</div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </section>
         </div>
