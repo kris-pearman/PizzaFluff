@@ -1,3 +1,8 @@
+<?php session_start();
+	$username = $_SESSION["username"];
+?>
+
+
 <!doctype html>
 <html>
 <link rel="stylesheet" href="css/navigation.css">
@@ -8,6 +13,8 @@
     <a href="account.php" class="navigation-option">Account</a>
     <a href="Login.php" class="navigation-option">Login</a>
     <a href="Basket.php"><img class="trolley-icon" src="/PizzaFluff/images/cart.svg"></img></a>
+    <?php echo $username; ?>
+    
 </nav>
 
 </html>

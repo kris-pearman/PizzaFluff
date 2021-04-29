@@ -1,3 +1,8 @@
+<?php
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,25 +23,25 @@
         <div class="content-container">
             <h2 class="account-title">Login</h2>
 
-            <form class="admin-form">
+            <form  name="login" method="post" action="controller\login_action.php" class="admin-form">
                 <div class="column">
-                    <span class="input-block">
-                        <label for="name">Username</label>
-                        <input type="text" id="name" name="name">
+                    <span class="input-block login">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username">
                     </span>
 
-                    <span class="input-block">
-                        <label for="address-line-1">Password</label>
-                        <input type="text" id="address-line-1" name="address-line-1">
+                    <span class="input-block login">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password">
                     </span>
-
                 </div>
                 
-            </form>
+            
             <div class="buttons-container">
-                <button class="pill-button">Login</button>
+                <input type="submit" class="pill-button" value="Login">
                 <button class="pill-button">Forgot Password</button>
             </div>
+            </form>
         </div>
     </div>
 
