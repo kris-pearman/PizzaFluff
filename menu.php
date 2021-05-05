@@ -1,7 +1,9 @@
 <?php
 //include database connection file
 include('controller/db.php');
-
+function addtocart($id) {
+    console_log('I just ran a php function' . $id); 
+  }
 //use try/catch block to query the database
 try {
     $sql = "SELECT * FROM menu_items WHERE Type = 'Mains' ";
@@ -110,7 +112,12 @@ while ($row = $drinksresult->fetch()) {
                             <div class="product-price">
                                 <strong>&pound;<?php echo $items['ItemPrice']; ?></strong>
                             </div>
-                            <div class="add-to-cart">BUY</div>
+                            <form action="controller\add_to_cart.php" method="POST">
+                                <button name="buttonclick" type="submit" class="add-to-cart">BUY</button>
+                                <input type="hidden" value="<?php echo $items['ItemID']; ?>" name="productID">
+                                <input type="hidden" value="<?php echo $items['ItemName']; ?>" name="productName">
+                                <input type="hidden" value="<?php echo $items['ItemPrice']; ?>" name="productPrice">
+                            </form>
                         </div>
                     <?php endforeach; ?>
                 </div>

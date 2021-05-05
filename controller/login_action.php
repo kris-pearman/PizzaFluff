@@ -1,5 +1,5 @@
 <?php
-$thisuser = $_POST['username']; //gets a value from whatever was filled in
+$itemID = $_POST['username']; //gets a value from whatever was filled in
 $thispass = $_POST['password']; //can use md5 to use hashed passwords
 
 include('db.php');

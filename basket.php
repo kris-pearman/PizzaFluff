@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,8 +18,14 @@
 
         <div class="content-container">
             <h2 class="account-title">Your Basket</h2>
-
-
+            <?php
+            foreach($_SESSION['basket'] as $items) :
+            echo $items['ID'];
+            echo $items['Name'];
+            echo $items['Price'];
+            endforeach;
+            ?>
+                
         </div>
     </div>
 
