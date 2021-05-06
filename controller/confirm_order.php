@@ -3,7 +3,7 @@
 
 
 $thiscustomer = "1";
-$thisordernumber = "12347";
+$thisordernumber = strtoupper(uniqid('SC') . substr(md5(mt_rand()), 0, 5));
 
 
 include('db.php');
@@ -47,6 +47,7 @@ catch (PDOException $e) {
 echo "Order Confirmed";
 
 unset($_SESSION['basket']);
+header('Location:../basket.php');
 exit();
 ?>
 

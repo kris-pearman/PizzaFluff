@@ -1,9 +1,6 @@
 <?php
 //include database connection file
 include('controller/db.php');
-function addtocart($id) {
-    console_log('I just ran a php function' . $id); 
-  }
 //use try/catch block to query the database
 try {
     $sql = "SELECT * FROM menu_items WHERE Type = 'Mains' ";
