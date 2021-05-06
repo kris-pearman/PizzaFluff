@@ -19,15 +19,36 @@
         <div class="content-container">
             <h2 class="account-title">Your Basket</h2>
             <?php
-            foreach($_SESSION['basket'] as $items) :
-            echo $items['ID'];
-            echo $items['Name'];
-            echo $items['Price'];
-            endforeach;
+                if (isset($_SESSION['$ercode'])) 
+                {
+                echo "Error Occuring";
+                unset($_SESSION['$ercode']);
+                }
+
+            if (isset($_SESSION['basket'])){
+                foreach($_SESSION['basket'] as $items) :
+                echo $items['ID'];
+                echo $items['Name'];
+                echo $items['Price'];
+                endforeach;
+            }
+            else 
+            {
+                echo "Basket Empty";
+            }
+
+
             ?>
                 
         </div>
+    <?php if (isset($_SESSION['basket'])){
+        ?>
+    <form action="controller\confirm_order.php" method="POST">
+        <button name="buttonclick" type="submit" class="add-to-cart">BUY</button>
+        <?php } ?>
+    </form>
     </div>
+
 
     <?php include('includes/page-footer.php'); ?>
 
