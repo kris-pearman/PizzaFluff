@@ -10,7 +10,7 @@ if(!isset($_SESSION) ) {
 
 try{
 
-$sql = "SELECT Username, Password FROM accounts WHERE Username = :username and Password = :userpass";
+$sql = "SELECT * FROM pizzafluff.customers WHERE Username = :username and Password = :userpass";
 $result = $pdo->prepare($sql);
 $result->bindparam(":username", $thisuser);
 $result->bindparam(":userpass", $thispass);
@@ -19,14 +19,52 @@ $result->execute();
 
 catch (PDOException $e) {
     echo "error" . $e->getMessage();
+    exit();
 }
 
-$num = $result->fetch(PDO::FETCH_ASSOC);
-    if($num > 0){
-        $_SESSION["username"] = $thisuser;   
+
+
+while ($row = $result->fetch()) {
+    $customer[] = array(
+        'CustomerID' => $row['Customer_ID'],
+        'FirstName' => $row['First_Name'],
+        'LastName' => $row['Last_Name'],
+        'Addr1' => $row['Address_1'],
+        'Addr2' => $row['Address_2'],
+        'Postcode' => $row['Postcode'],
+        'Phone' => $row['Phone'],
+        'Email' => $row['Email'],
+        'Username' => $row['Username'],
+        'Password' => $row['Password'],
+        'Access' => $row['AccessLevel']
+    );
+
+    $_SESSION['Customer'] = $customer;
+
+}
+
+foreach($customer as $option) {
+        echo $option['Username'], '<br>';
+        $_SESSION['Username'] = $option['Username'];
+        $_SESSION['Access'] = $option['Access'];
+        $_SESSION['UserID'] = $option['CustomerID'];
     }
 
+// $num = $result->fetch(PDO::FETCH_ASSOC); THIS ALWAYS RETURNS 0 NOT SURE WHY.
     
+//     if($num > 0){
+//       echo "Success";
+//       exit();
+//     }
+//     echo("fail");
+//     exit();
 
-header('Location:../index.php');
+
+//temporary, check customer is set. 
+    if (isset($customer)) {
+        echo $_SESSION['Username'];
+        echo "Success";
+    } 
+
+ header('Location:../index.php');
 ?>

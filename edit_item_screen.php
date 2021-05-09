@@ -12,57 +12,56 @@
 
 <body>
     <?php include('includes/page-header.php'); ?>
+    <?php if ($_SESSION['Access'] != 2 ){
+    header('Location:index.php');
+    }
+    ?>
 
     <div class="page-content admin-page">
 
         <div class="content-container">
-            <h2 class="account-title">My Account Details</h2>
+            <h2 class="account-title">Edit Item</h2>
 
-            <form class="admin-form">
+            <form class="admin-form" action="controller\admin\run_update.php" method="POST">
                 <div class="column">
                     <span class="input-block">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name">
+                        <label for="id">ID:</label>
+                        <input type="text" id="id" name="id" value=<?php echo $_POST['productID'];?>>
                     </span>
 
                     <span class="input-block">
-                        <label for="address-line-1">Address Line 1:</label>
-                        <input type="text" id="address-line-1" name="address-line-1">
+                        <label for="name">Product Name:</label>
+                        <input type="text" id="product-name" name="product-name" value=<?php echo $_POST['productID'];?>>
                     </span>
 
                     <span class="input-block">
-                        <label for="address-line-2">Address Line 2:</label>
-                        <input type="text" id="address-line-1" name="address-line-2">
+                        <label for="price">Product Price:</label>
+                        <input type="text" id="product-price" name="product-price" value=<?php echo $_POST['productID'];?>>
                     </span>
 
                 </div>
                 <div class="column">
                     <span class="input-block">
-                        <label for="postcode">Postcode:</label>
-                        <input type="text" id="postcode" name="postcode">
+                        <label for="type">Product Type:</label>
+                        <input type="text" id="type" name="type" value=<?php echo $_POST['productID'];?>>
                     </span>
 
                     <span class="input-block">
-                        <label for="phone-number">Phone Number:</label>
-                        <input type="tel" id="phone-number" name="phone-number">
+                        <label for="description">Product Description:</label>
+                        <input type="text" id="description" name="description" value=<?php echo $_POST['productID'];?>>
                     </span>
 
                     <span class="input-block">
-                        <label for="email">Email Address:</label>
-                        <input type="email" id="email" name="email">
-                    </span>
-
-                    <span class="input-block">
-                        <label for="username">Username:</label>
-                        <input type="text" id="username" name="username">
+                        <label for="email">Product Image</label>
+                        <input type="text" id="image" name="image" value=<?php echo $_POST['productID'];?>>
                     </span>
                 </div>
-            </form action="controller\admin\update_accounts.php" >
+            
             <div class="buttons-container">
                 <button type="submit" class="pill-button" name="update">Update</button>
-                <button type="submit" class="pill-button" name="register">Register</button>
                 <button type="submit" class="pill-button" name="delete">Delete Account</button>
             </div>
+            </form>
         </div>
     </div>
 
