@@ -18,11 +18,16 @@
         <div class="content-container">
             <h2 class="account-title">My Account Details</h2>
 
-            <form class="admin-form">
+            <form class="admin-form" action="controller\admin\register.php" method="POST">
                 <div class="column">
                     <span class="input-block">
-                        <label for="name">Name:</label>
+                        <label for="name">First Name:</label>
                         <input type="text" id="name" name="name">
+                    </span>
+
+                    <span class="input-block">
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" id="lastname" name="lastname">
                     </span>
 
                     <span class="input-block">
@@ -33,6 +38,11 @@
                     <span class="input-block">
                         <label for="address-line-2">Address Line 2:</label>
                         <input type="text" id="address-line-1" name="address-line-2">
+                    </span>
+
+                    <span class="input-block">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password">
                     </span>
 
                 </div>
@@ -57,12 +67,14 @@
                         <input type="text" id="username" name="username">
                     </span>
                 </div>
+                <div class="buttons-container">
+                    <button type="submit" class="pill-button" name="update">Update</button>
+                    <button type="submit" class="pill-button" name="register">Register</button>
+                    <button type="submit" class="pill-button" name="delete">Delete Account</button>
+                </div>
             </form action="controller\admin\update_accounts.php" >
-            <div class="buttons-container">
-                <button type="submit" class="pill-button" name="update">Update</button>
-                <button type="submit" class="pill-button" name="register">Register</button>
-                <button type="submit" class="pill-button" name="delete">Delete Account</button>
-            </div>
+            
+
         </div>
     </div>
 

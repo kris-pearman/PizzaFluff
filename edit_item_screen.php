@@ -11,9 +11,11 @@
 </head>
 
 <body>
-    <?php include('includes/page-header.php'); ?>
+    <?php include('includes/page-header.php'); 
+        $xx = $_POST['productDesc'];?>
     <?php if ($_SESSION['Access'] != 2 ){
     header('Location:index.php');
+
     }
     ?>
 
@@ -31,29 +33,29 @@
 
                     <span class="input-block">
                         <label for="name">Product Name:</label>
-                        <input type="text" id="product-name" name="product-name" value=<?php echo $_POST['productID'];?>>
+                        <input type="text" id="product-name" name="product-name" value=<?php echo $_POST['productName'];?>>
                     </span>
 
                     <span class="input-block">
                         <label for="price">Product Price:</label>
-                        <input type="text" id="product-price" name="product-price" value=<?php echo $_POST['productID'];?>>
+                        <input type="text" id="product-price" name="product-price" value=<?php echo $_POST['productPrice'];?>>
                     </span>
 
                 </div>
                 <div class="column">
                     <span class="input-block">
                         <label for="type">Product Type:</label>
-                        <input type="text" id="type" name="type" value=<?php echo $_POST['productID'];?>>
+                        <input type="text" id="type" name="type" value=<?php echo $_POST['productType'];?>>
                     </span>
 
                     <span class="input-block">
                         <label for="description">Product Description:</label>
-                        <input type="text" id="description" name="description" value=<?php echo $_POST['productID'];?>>
+                        <input type="text" id="description" name="description" value=<?php echo "$xx"?>>
                     </span>
 
                     <span class="input-block">
                         <label for="email">Product Image</label>
-                        <input type="text" id="image" name="image" value=<?php echo $_POST['productID'];?>>
+                        <input type="text" id="image" name="image" value=<?php echo $_POST['productImage'];?>>
                     </span>
                 </div>
             

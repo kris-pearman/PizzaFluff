@@ -147,7 +147,15 @@ while ($row = $drinksresult->fetch()) {
                             <div class="product-price">
                                 <strong>&pound;<?php echo $items['ItemPrice']; ?></strong>
                             </div>
-                            <div class="add-to-cart">BUY</div>
+                            <form action="edit_item_screen.php" method="POST">
+                                <button name="buttonclick" type="submit" class="add-to-cart">BUY</button>
+                                <input type="hidden" value="<?php echo $items['ItemID']; ?>" name="productID">
+                                <input type="hidden" value="<?php echo $items['ItemName']; ?>" name="productName">
+                                <input type="hidden" value="<?php echo $items['ItemPrice']; ?>" name="productPrice">
+                                <input type="hidden" value="<?php echo $items['ItemDescription']; ?>" name="productDesc">
+                                <input type="hidden" value="<?php echo $items['ItemType']; ?>" name="productType">
+                                <input type="hidden" value="<?php echo $items['ItemImage']; ?>" name="productImage">
+                            </form>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -166,7 +174,15 @@ while ($row = $drinksresult->fetch()) {
                             <div class="product-price">
                                 <strong>&pound;<?php echo $items['ItemPrice']; ?></strong>
                             </div>
-                            <div class="add-to-cart">BUY</div>
+                            <form action="edit_item_screen.php" method="POST">
+                                <button name="buttonclick" type="submit" class="add-to-cart">BUY</button>
+                                <input type="hidden" value="<?php echo $items['ItemID']; ?>" name="productID">
+                                <input type="hidden" value="<?php echo $items['ItemName']; ?>" name="productName">
+                                <input type="hidden" value="<?php echo $items['ItemPrice']; ?>" name="productPrice">
+                                <input type="hidden" value="<?php echo $items['ItemDescription']; ?>" name="productDesc">
+                                <input type="hidden" value="<?php echo $items['ItemType']; ?>" name="productType">
+                                <input type="hidden" value="<?php echo $items['ItemImage']; ?>" name="productImage">
+                            </form>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -185,7 +201,15 @@ while ($row = $drinksresult->fetch()) {
                             <div class="product-price">
                                 <strong>&pound;<?php echo $items['ItemPrice']; ?></strong>
                             </div>
-                            <div class="add-to-cart">BUY</div>
+                            <form action="edit_item_screen.php" method="POST">
+                                <button name="buttonclick" type="submit" class="add-to-cart">BUY</button>
+                                <input type="hidden" value="<?php echo $items['ItemID']; ?>" name="productID">
+                                <input type="hidden" value="<?php echo $items['ItemName']; ?>" name="productName">
+                                <input type="hidden" value="<?php echo $items['ItemPrice']; ?>" name="productPrice">
+                                <input type="hidden" value="<?php echo $items['ItemDescription']; ?>" name="productDesc">
+                                <input type="hidden" value="<?php echo $items['ItemType']; ?>" name="productType">
+                                <input type="hidden" value="<?php echo $items['ItemImage']; ?>" name="productImage">
+                            </form>
                         </div>
                     <?php endforeach; ?>
                 </div>
